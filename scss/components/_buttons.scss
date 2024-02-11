@@ -1,0 +1,14 @@
+
+
+
+
+.button{
+    background-color: $primary-color;
+    border-radius: 10px;
+    height:auto;
+    width:auto;
+}
+
+.btn.btn-studentzone {                  //loginpage uses this for login button
+    background-color: $secondary-color;
+}
