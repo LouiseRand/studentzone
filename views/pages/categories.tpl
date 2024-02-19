@@ -25,52 +25,21 @@
     </div><!--search bar end-->
 
 
+    <h1 class="mt-4 mb-4">Recipe Categories</h1>
 
-    <div class="row">  <!--recipe category elements-->
+        <div class="row">
+        {foreach from=$categories item=category}
+            <div class="col-md-3">
+                <div class="recipe-card">
+                    <div class="recipe-card-image" style="background-image: url(./user-images/categories/{$category.cat_image});">
+                        <a href="index.php?p=recipes&id={$category.cat_id}"></a>
+                    </div>
+                    <a href="index.php?p=recipes&id={$category.cat_id}"><h3>{$category.cat_name}</h3></a>                             
+                </div>                         
+            </div>
+        {/foreach}
+        </div> 
   
-      <div class="col-md-3">                                       <!--CHECK ISSUES FOR IMAGES-->
-        <div class="recipe-card">
-          <div class="recipe-card-image">
-            <a href="index.php?p=recipes"></a>
-          </div>
-          <a href="index.php?p=recipes"><h3>Lunch Recipes</h3></a> 
-        
-        </div>      
-      </div>
-  
-      <div class="col-md-3">
-        <div class="recipe-card">
-          <div class="recipe-card-image" style="background-image: url(./images/lunch.jpg);"></div>
-            <a href="index.php?p=recipes"></a>
-          </div>
-          <a href="index.php?p=recipes"><h3>Lunch Recipes</h3></a> 
-        
-        </div>      
-      </div>
-      
-  
-      <div class="col-md-3">
-        <div class="recipe-card">
-          <div class="recipe-card-image">
-            <a href="index.php?p=recipes"></a>
-          </div>
-          <a href="index.php?p=recipes"><h3>Lunch Recipes</h3></a> 
-        
-        </div>      
-      </div>
-      
-  
-      <div class="col-md-3">
-        <div class="recipe-card">
-          <div class="recipe-card-image">
-            <a href="index.php?p=recipes"></a>
-          </div>
-          <a href="index.php?p=recipes"><h3>Lunch Recipes</h3></a> 
-        
-        </div>      
-      </div>
-      
-    </div> 
 
 
 
