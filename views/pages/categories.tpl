@@ -1,7 +1,7 @@
 {extends file="layouts/main.tpl"}
 
 {block name="body"}
-    <h1 class="mt-4 mb-4">recipe categories</h1> <!--padding added to h1-->
+    
 
 
     <div class="row"><!--search bar-->

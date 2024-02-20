@@ -45,9 +45,19 @@
               <li class="nav-item">
                 <a class="nav-link" href="index.php?p=categories">Easy recipes</a>   <!--cat = category-->
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php?p=login">Login</a>
-              </li>
+              {if $user_data}
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.php?p=account">Account</a>
+                  </li>
+            
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.php?p=logout">Logout</a>
+                  </li>
+              {else}
+                  <li class="nav-item">
+                  <a class="nav-link" href="index.php?p=login">Login / Register</a>
+                  </li>
+              {/if}  
             </ul>
 
 
