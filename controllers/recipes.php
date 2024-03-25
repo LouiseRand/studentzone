@@ -6,4 +6,5 @@ $Smarty->assign('recipes', $recipes);
 
 $Category = new Category($Conn);
 $category = $Category->getCategory($cat_id);
+
 $Smarty->assign('category', $category);
