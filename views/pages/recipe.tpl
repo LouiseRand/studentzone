@@ -42,25 +42,14 @@
 
 
         </div>
-    </div> 
-    <h2>Leave a review</h2>
-    {if $user_data}
-        <form action="" method="post">
-        <div class="form-group">
-            <label for="rating">Rating</label>
-            <select class="form-control" id="rating" name="rating">
-                <option value="1">1 Star (Very bad)</option>
-                <option value="2">2 Star (Bad)</option>
-                <option value="3">3 Star (Okay)</option>
-                <option value="4">4 Star (Good)</option>
-                <option value="5">5 Star (Very Good)</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+      </div>       
+    </div>
 
-    {else}
-        <p>Please login to leave a review of this recipe.</p>
-    {/if}
-    
+
+
+    <div class="col-md-6">         <!--Block row 2-->
+        
+    </div>
+</div>
+
 {/block}
