@@ -16,8 +16,7 @@ if($_POST) {                                              // if post -ensures fo
         $error = "Recipe time not set";
     }else if(!$_POST['recipe_servings']){
         $error = "Recipe servings not set";
-    }   
-    else if(!$_FILES['recipe_image'][ 'name']) {           //ensure image is uploaded//
+    }else if(!$_FILES['recipe_image'][ 'name']) {           
         $error = "Please upload a recipe image";
     }
     

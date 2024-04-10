@@ -19,7 +19,7 @@
         </div>
 
         <div class="col-md-6">
-
+            <p>{$recipe.recipe_ingredients}</p>
             <p>{$recipe.recipe_instructions}</p>
 
             <ul class="recipe-features">

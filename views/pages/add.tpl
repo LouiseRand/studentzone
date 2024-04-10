@@ -59,6 +59,10 @@
                     <option value="expensive">Expensive</option>
                 </select>
             </div>
+            <div class="mb-3">
+                <label class="form-label" for="recipe_ingredients">Recipe Ingredients</label>
+                <textarea class="form-control" id="recipe_ingredients" name="recipe_ingredients"></textarea>
+            </div>
         
             <div class="mb-3">
                 <label class="form-label" for="recipe_instructions">Recipe Instructions</label>
