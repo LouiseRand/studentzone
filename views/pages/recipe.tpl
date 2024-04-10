@@ -23,7 +23,7 @@
             <p>{$recipe.recipe_instructions}</p>
 
             <ul class="recipe-features">
-                <li><i class="fas fa-star-half-alt"></i> {$recipe_rating} St3ars</li>
+                <li><i class="fas fa-star-half-alt"></i> {$recipe_rating} Stars</li>
                 <li><i class="far fa-clock"></i>{$recipe.recipe_time}</li>
                 <li><i class="fas fa-users"></i>{$recipe.recipe_servings}</li>
                 <li><i class="fas fa-dollar-sign"></i>{$recipe.recipe_budget}</li>

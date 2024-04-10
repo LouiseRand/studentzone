@@ -169,6 +169,7 @@ __metadata:
     grunt-contrib-uglify: ^5.2.2
     grunt-contrib-watch: ^1.1.0
     grunt-sass: ^3.1.0
+    jquery: ^3.7.1
     lightgallery: ^2.7.2
     node-sass: ^9.0.0
   languageName: unknown
@@ -1679,6 +1680,13 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: 57d43ad11eadc98cdfe7496612f6bbb5255ea69fe51ea431162db302c2a11011642f50cfad57288bd0aea78384a0612b16e131944ad8ecd09d619041c8531b54
+  languageName: node
+  linkType: hard
+
+"jquery@npm:^3.7.1":
+  version: 3.7.1
+  resolution: "jquery@npm:3.7.1"
+  checksum: 4370b8139d6ae82867eb6f7f21d1edccf1d1bdf41c0840920ea80d366c2cd5dbe1ceebb110ee9772aa839b04400faa1572c5c560b507c688ed7b61cea26c0e27
   languageName: node
   linkType: hard
 
