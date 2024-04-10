@@ -17,7 +17,7 @@
             {$error}
         </div>
     {else if $success}
-        <div class="alert alert-success mb-3" role="alert">                         <!--validation step needed here for email and not being able to change pw to a previous one-->
+        <div class="alert alert-success mb-3" role="alert">           <!--validation step needed here for email and not being able to change pw to a previous one-->
             {$success}
         </div>
     {/if}                                                
