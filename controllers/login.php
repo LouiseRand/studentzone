@@ -2,7 +2,11 @@
 if($_POST) {                            //only process regestration form with a submission not on page load.
     if($_POST['register']) {
         if(!$_POST['email']){
-            $error = "Email not set";   //check email input is not null on regestration
+            $error = "Email not set"; //check email input is not null on regestration
+            
+        }else if(!$_POST['name']){
+                $error = "username not set";
+
         }else if(!$_POST['password']){
             $error = "Password not set";      
         }else if(!$_POST['password_confirm']){
@@ -49,7 +53,7 @@ if($_POST) {                            //only process regestration form with a 
         if(!$_POST['email']){
             $error = "Email not valid"; 
         }else if(!$_POST['password']){
-            $error = "Password not valid";
+            $error = "Password not valid";     //could add validation for username/s num
 
 
         }else if(strlen($_POST['password']) <8) {
@@ -66,7 +70,7 @@ if($_POST) {                            //only process regestration form with a 
                 header("Location: index.php?p=account");  
                 exit();   
             }else{   
-                $Smarty->assign('error', "Incorrect Email/Password");    
+                $Smarty->assign('error', "Incorrect Email/Password");    //notification to user of error
             }
         }
 

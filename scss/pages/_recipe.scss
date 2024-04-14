@@ -1,5 +1,3 @@
-
-
 body#page-recipe {
     .recipe-image {
         border: solid 3px #FFF;
@@ -20,7 +18,7 @@ body#page-recipe {
     .recipe-features {
         list-style: none;
         padding: 0;
-        color: #FFF;
+        color: rgb(0, 0, 0);
     
         li {
             margin-bottom: 10px;
@@ -32,26 +30,5 @@ body#page-recipe {
         }
     }  
     
-    form {
-        label {
-            color: #FFF;
-        }
-    }
-    &#search-form {
-        background-color: $secondary-color;
-        padding: 10px;
-        border-radius: 3px;
-        label {
-            color: $primary-color;
-        }
-    
-        .btn {
-            background-color: #FFF;
-            color: $primary-color;
-            border: 0;
-        }
-    }
-
-
     
 }

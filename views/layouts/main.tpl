@@ -31,31 +31,28 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item active">
-                <a class="nav-link" href="index.php?p=home">Home</a>
+                <a class="nav-link" href="/studentzone/home">Home</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="index.php?p=forum">Forum</a>
+                  <a class="nav-link" href="/studentzone/forum">Forum</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?p=posts">Posts</a>
+                  <a class="nav-link" href="/studentzone/map">Local Map</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="index.php?p=map">Local Map</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.php?p=categories">Easy recipes</a>   <!--cat = category-->
+                <a class="nav-link" href="/studentzone/categories">Easy recipes</a>   <!--cat = category-->
               </li>
               {if $user_data}
                   <li class="nav-item">
-                      <a class="nav-link" href="index.php?p=account">Account</a>
+                      <a class="nav-link" href="/studentzone/account">Account</a>
                   </li>
             
                   <li class="nav-item">
-                      <a class="nav-link" href="index.php?p=logout">Logout</a>
+                      <a class="nav-link" href="/studentzone/logout">Logout</a>
                   </li>
               {else}
                   <li class="nav-item">
-                  <a class="nav-link" href="index.php?p=login">Login / Register</a>
+                  <a class="nav-link" href="/studentzone/login">Login / Register</a>
                   </li>
               {/if}  
             </ul>

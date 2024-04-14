@@ -1,5 +1,12 @@
+.btn.btn-studentzone {                  //loginpage uses this for login button
+    background-color: $secondary-color;
+}
 
 
+
+.btn.btn-primary {
+    background-color: $form-colour-one;
+}
 
 
 .button{
@@ -7,8 +14,4 @@
     border-radius: 10px;
     height:auto;
     width:auto;
-}
-
-.btn.btn-studentzone {                  //loginpage uses this for login button
-    background-color: $secondary-color;
 }

@@ -6,7 +6,6 @@
 @import "../node_modules/lightgallery/scss/lightgallery-bundle.scss";
 
 
-// Base
 
 // Layout
 @import "layout/header";
@@ -17,13 +16,15 @@
 @import "components/headings";
 @import "components/recipe-card";
 @import "components/form";
+@import "components/logintabs";
+@import "components/dropnav";
 
 // Pages
 @import "pages/forum";
 @import "pages/login";
 @import "pages/recipe";
-@import "pages/recipes";
 @import "pages/categories";
+//@import "pages/map";
 
 
 // Themes

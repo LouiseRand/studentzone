@@ -62,6 +62,16 @@ class Recipe{
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function getUserRecipes(){                                  //fetching user added recipes
+        $query = "SELECT * FROM recipes WHERE user_id = :user_id";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute([
+            "user_id" => $_SESSION['user_data']['user_id']
+        ]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+
+    }
 
 }
 
