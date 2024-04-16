@@ -5,7 +5,8 @@
 
 
 .btn.btn-primary {
-    background-color: $form-colour-one;
+    background-color: $secondary-color;
+    color: $secondary-text-color; //text on button (login page buttons)
 }
 
 

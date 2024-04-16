@@ -11,12 +11,7 @@
 
           </div> 
           
-          <div class="col-md-6">
-            <form action="search.html" method="post" class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Pizza..." name="query" aria-label="Search">
-              <button class="btn btn-outline-dark" type="submit">Search</button>
-            </form>  
-          </div>
+
 
           <div class="col-md-3">
 
@@ -25,6 +20,12 @@
     </div><!--search bar end-->
 
 
+
+
+
+
+
+    
     <h1 class="mt-4 mb-4">Recipe Categories</h1>
 
         <div class="row">

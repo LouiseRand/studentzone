@@ -3,23 +3,28 @@
     
     <h1 class="mb-4 mb-3">{$recipe.recipe_name}</h1>
     <div class="row">
-        <div class="col-md-6">
-            {if $recipe.images}
-                
-                <div class="row" id= "lightgallery">
-                    {foreach from=$recipe.images item=image}
-                        <div class="col-md-4">
-                            <div class="recipe-image mb-4" style="background-image: url('../user-images/{$image.recipe_image}');">
-                                <a href="../user-images/{$image.recipe_image}"></a>                               
-                            </div>       
-                        </div>
-                    {/foreach}
-                </div> 
-            {/if}                
-        </div>
 
         <div class="col-md-6">
+
+            <div class="row">
+            
+
+                <div class="row">                            
+                    <div class="recipe-image-box">
+                        <div class="recipe-image" style="background-image: url('/studentzone/user-images/{$recipe.recipe_image}');">
+                            <a href="index.php?p=recipe&id={$recipe.recipe_image}"></a>
+                        </div>
+                                                   
+                    </div>                         
+                </div>
+
+            </div> 
+                
+             
+
+            <h1>Ingredients:</h1>
             <p>{$recipe.recipe_ingredients}</p>
+            <h1>Instructions:</h1>
             <p>{$recipe.recipe_instructions}</p>
 
             <ul class="recipe-features">
@@ -43,7 +48,7 @@
 
         </div>
     </div> 
-    <h2>Leave a review</h2>
+    <h1>Leave a review</h1>
     {if $user_data}
         <form action="" method="post">
         <div class="form-group">

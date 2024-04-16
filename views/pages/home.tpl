@@ -2,7 +2,7 @@
 
 {block name="body"}
 
-
+    <h1>heading</h1>
 
 
 

@@ -1,50 +1,6 @@
-body#page-login {
-    form {
-        label {
-            color: rgb(0, 0, 0);
-        }
-        &#registration-form {
-            background-color: $form-colour-one;
-            padding: 10px;
-            border-radius: 3px;
-            color: rgb(0, 0, 0);
-
-            
-            label {
-                color: rgb(0, 0, 0);
-            }
-        
-            .btn {
-                background-color: rgb(255, 255, 255);
-                color: rgb(0, 0, 0);
-                border: 0;
-            }
-
-        }
-        &#login-form {
-            background-color: $form-colour-one;
-            padding: 10px;
-            border-radius: 3px;
-            color: rgb(0, 0, 0);
-
-            
-            label {
-                color: rgb(0, 0, 0);
-            }
-        
-            .btn {
-                background-color: rgb(255, 255, 255);
-                color: rgb(0, 0, 0);
-                border: 0;
-            }
-
-        }
-
-        
-    }    
+.form-label {
+    
+    color: $primary-text-color; // title text for input boxes
+    
 }
-.container-login{
-    padding-top: 15px;
 
-
-}
