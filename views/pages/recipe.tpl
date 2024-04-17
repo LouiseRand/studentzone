@@ -12,7 +12,7 @@
                 <div class="row">                            
                     <div class="recipe-image-box">
                         <div class="recipe-image" style="background-image: url('/studentzone/user-images/{$recipe.recipe_image}');">
-                            <a href="index.php?p=recipe&id={$recipe.recipe_image}"></a>
+                            <a href="/studentzone/recipe&id={$recipe.recipe_image}"></a>
                         </div>
                                                    
                     </div>                         

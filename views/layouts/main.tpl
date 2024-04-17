@@ -57,7 +57,7 @@
               {/if}  
             </ul>
             
-            <form action="search.html" method="post" class="d-flex" role="search">
+            <form action="/studentzone/search" method="post" class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Pizza..." name="query" aria-label="Search">
               <button class="btn btn-outline-dark" type="submit">Search</button>
             </form>  

@@ -8,9 +8,9 @@
                             <div class="col-md-3">
                                 <div class="post-card">
                                     <div class="post-card-image" style="background-image: url('./user-images/{$post.post_image}');">
-                                        <a href="index.php?p=post&id={$post.post_id}"></a>
+                                        <a href="/studentzone/post&id={$post.post_id}"></a>
                                     </div>
-                                    <a href="index.php?p=post&id={$post.post_id}"><h3>{$post.post_name}</h3></a>                             
+                                    <a href="/studentzone/post&id={$post.post_id}"><h3>{$post.post_name}</h3></a>                             
                                 </div>                         
                             </div>
                         {/foreach}
