@@ -36,7 +36,7 @@
                         <label class="form-label" for="login_password">Password</label>
                         <input type="password" class="form-control" id="login_password" name="password">
                     </div>
-                    <button type="submit" name="login" value="1" class="btn btn-primary">Login</button>                                
+                    <button type="submit" name="login" value="1" class="btn btn-studentzone">Login</button>                                
                 </form> 
                 
 
@@ -46,14 +46,19 @@
             <div class="col">
                 <form id="registration-form" method="post" action="">
 
+                    <div class="mb-3">                                                
+                          <label class="form-label" for="reg_name1">Username</label>                    
+                          <input type="user_name1" class="form-control" id="reg_name1" name="user_name1"> 
+                     </div>                                                                      
+
                     <div class="mb-3">
-                        <label class="form-label" for="reg_name">User Name</label>
-                        <input type="name" class="form-control" id="reg_name" name="name">
+                        <label class="form-label" for="reg_degree">Degree: Computing, Adult Nursing etc.</label>
+                        <input type="degree" class="form-control" id="reg_degree" name="degree">
                     </div>
 
 
                     <div class="mb-3">
-                        <label class="form-label" for="reg_email">Email Address</label>
+                        <label class="form-label" for="reg_email">UOS Email Address</label>
                         <input type="email" class="form-control" id="reg_email" name="email">
                     </div>
                     <div class="mb-3">

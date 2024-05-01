@@ -2,7 +2,6 @@
 
 {block name="body"}
     <div class="container">
-    <div class="container">
     <h1 class="mb-4 pb-2">Change your password</h1>
 
     <div class="btn-group mb-3" role="group" aria-label="Account menu">
@@ -26,19 +25,16 @@
     
     <form action="" method="post">
         <div class="form-group">
-            <label for="currentPassword">Current Password</label>
-            <input type="password" class="form-control" id="currentPassword" name="currentPassword">
+            <label for="currentName1">Current Username</label>
+            <input type="user_name1" class="form-control" id="currentName1" name="currentName1">
         </div>
         <div class="form-group">
-            <label for="newPassword">New Password</label>
-            <input type="password" class="form-control" id="newPassword" name="newPassword">
+            <label for="newName1">New Username</label>
+            <input type="user_name1" class="form-control" id="newName1" name="newName1">
         </div>
-        <button type="submit" class="btn btn-primary">Change password</button>
+        <button type="submit" class="btn btn-primary">Change Username</button>
     </form>
+    
     </div>
 
-
-
-
-    </div>
 {/block}

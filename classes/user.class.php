@@ -1,15 +1,27 @@
 <?php
-class User {
+class User {   
     protected $Conn;
     public function __construct($Conn){
-        $this ->Conn = $Conn;
+        $this ->Conn = $Conn; //this links the $Conn inside the class to the one outside the class
     }
-    public function createUser($user_data){
-        $sec_password = password_hash($user_data['password'], PASSWORD_DEFAULT);
-        $query= "INSERT INTO users (user_email, user_pass) VALUES(:user_email, :user_pass)";
+
+
+
+
+    public function createUser($user_data){   //used to register a new user:
+        $sec_password = password_hash($user_data['password'], PASSWORD_DEFAULT);  //password security using pw hash to prevent raw storage of PWs
+        $query= "INSERT INTO users ( user_email, user_pass, user_degree, user_name1) VALUES( :user_email, :user_pass, :user_degree, :user_name1)"; //defining SQL query
         $stmt = $this->Conn->prepare($query);
-        return $stmt->execute(array('user_email'=> $user_data['email'],'user_pass' => $sec_password));
+        return $stmt->execute(array(
+            'user_email'=> $user_data['email'],
+            'user_degree'=> $user_data['degree'],
+            'user_name1' => $user_data['user_name1'],
+            'user_pass' => $sec_password)); //pass through user registration data and execute the query
     }
+
+
+
+
     public function loginUser($email,$password){
         $query = "SELECT * FROM users WHERE user_email = :user_email";
         $stmt = $this->Conn->prepare($query);
@@ -41,5 +53,32 @@ class User {
         return true;
     }
     
+    public function getUserName($user_id) {
+        // Retrieve user data based on user ID
+        $user_data = $this->getUser($user_id);
+        
+        // Extract and return the username
+        return $user_data['user_name1'];
+        return $user_data['user_degree'];     
+    }
 
+
+
+
+
+
+
+    //BROKEN BELOW:
+
+    //public function changeUserName1($current_name1, $new_name1) {
+    //    if(!user_name_verify($current_name1, $_SESSION['user_data']['user_name1'])) {
+            // wrong username
+     //       return false;
+    //    }
+     //   $new_sec_pass = ($new_name1);
+    //    $query = "UPDATE users SET user_name1 = :user_name1 WHERE user_id = :user_id";
+    //    $stmt = $this->Conn->prepare($query);
+     //   $stmt->execute(array('user_name1' => $new_sec_name1, 'user_id' => $_SESSION['user_data']['user_id']));
+    //    return true;
+   // }
 }

@@ -1,9 +1,9 @@
 {extends file="layouts/main.tpl"}
 {block name="body"}
-    
-    <h1 class="mt-4 mb-3">{$category.cat_name} Recipes</h1>
+    <div class="container">   
+    <h1 class="mt-4 mb-3">{$category.cat_name} recipes</h1>
 
-                    <p>Browse our wide range of {$category.cat_name} recipes below:</p>
+                    <p>Browse some {$category.cat_name} recipes below.</p>
 
                         <div class="row">
                         {foreach from=$recipes item=recipe}
@@ -19,13 +19,6 @@
                             
                         </div> 
                         
-                        
-
-                    </div>
-
+                  
+    </div>
 {/block}
-
-
-
-
-    

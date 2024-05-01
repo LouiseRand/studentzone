@@ -1,11 +1,20 @@
 <?php
-if($_POST) {                            //only process regestration form with a submission not on page load.
+if($_POST){
     if($_POST['register']) {
         if(!$_POST['email']){
-            $error = "Email not set"; //check email input is not null on regestration
+            $error = "Email not set";
+
+        } else if (!isset($_POST['user_name1'])) {
+            $error = "Username not set";
+        } else if (strlen($_POST['user_name1']) < 2) {
+            $error = "Username must be at least 2 characters in length";
+        
             
-        }else if(!$_POST['name']){
-                $error = "username not set";
+       }else if(!$_POST['degree']){
+           $error = "degree not set";
+       }else if(strlen($_POST['degree']) <5) {
+            $error = "Degree must be at least 5 characters in length";  
+
 
         }else if(!$_POST['password']){
             $error = "Password not set";      
@@ -22,52 +31,49 @@ if($_POST) {                            //only process regestration form with a 
             $error = "Email is not valid";
         }
 
-       
-        if($error) {
-            $Smarty->assign('error', $error);
-        }else{   
-            $User = new User($Conn);
-            $attempt = $User->createUser($_POST);
-            
-            if($attempt) {
-
-                $email = new \SendGrid\Mail\Mail(); 
-                $email->setFrom("S224306@uos.ac.uk", "Louise Rand");
-                $email->setSubject("Welcome to StudentZone");
-                $email->addTo($_POST['email'], "User");
-                $email->addContent(
-                     "text/html", "<h1>Welcome to StudentZone!</h1>"
-                );
-                $sendgrid = new \SendGrid('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');
-                $response = $sendgrid->send($email);
-
-
-
-                $Smarty->assign('success', "Your account has been created. Please login.");
-            }else{
-                $Smarty->assign('error', "An error occurred, please try again later.");
-            }
-        }   
         
-        }else if($_POST['login']) {
-        if(!$_POST['email']){
-            $error = "Email not valid"; 
-        }else if(!$_POST['password']){
-            $error = "Password not valid";     //could add validation for username/s num
+        if($error) {
+            $Smarty->assign('error',$error);  //pass through the content of $error variable to Smarty template. 
+        }else{    
+          $User =new User($Conn);
+          $attempt = $User ->createUser($_POST);
+          if($attempt) {
 
+
+            $email = new \SendGrid\Mail\Mail(); 
+            $email->setFrom("S224306@uos.ac.uk", "Louise Rand");
+            $email->setSubject("Welcome to Orchids for everyone!");
+            $email->addTo($_POST['email'], "User");
+            $email->addContent(
+                 "text/html", "<h1>Welcome to Student Zone!</h1>" //email contents
+            );
+            $sendgrid = new \SendGrid('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');
+            $response = $sendgrid->send($email);
+
+            $Smarty->assign('success', "Your account has been created. Please now login.");
+          }else{
+            $Smarty->assign('error', "an error occured, please try again later.");  //notification to user of error
+          }
+               
+        }
+    }else if($_POST['login']){
+        if(!$_POST['email']){
+            $error = "Email not valid";      
+        }else if(!$_POST['password']){
+            $error = "Password not valid"; //should be changed to email or password not valid
 
         }else if(strlen($_POST['password']) <8) {
             $error = "Password must be at least 8 characters in length";
         }
         else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-            $error = "Email is not valid";
+            $error = "Email is not valid";        //notification to user of error
         }else{
             $User=new User($Conn);
             $user_data=$User->loginUser($_POST['email'],$_POST['password']);
             if($user_data) {
                 $_SESSION['is_loggedin'] = true;
-                $_SESSION['user_data'] = $user_data;              
-                header("Location: index.php?p=account");  
+                $_SESSION['user_data'] = $user_data;               
+                header("Location: /studentzone/account");  
                 exit();   
             }else{   
                 $Smarty->assign('error', "Incorrect Email/Password");    //notification to user of error
@@ -75,4 +81,5 @@ if($_POST) {                            //only process regestration form with a 
         }
 
     }
+
 }
