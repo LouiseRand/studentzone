@@ -338,12 +338,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:v5.3.1":
-  version: 5.3.1
-  resolution: "bootstrap@npm:5.3.1"
+"bootstrap@npm:v5.3.3":
+  version: 5.3.3
+  resolution: "bootstrap@npm:5.3.3"
   peerDependencies:
     "@popperjs/core": ^2.11.8
-  checksum: 10/3b8342135cbeea6fc50ea36c7649cf3fb27b5fbcaccd4e4f52c9d302e935354df0c88a8a7b3ec8f7ba36437d061e5a64d3df58cca4b086b44428257aabf909eb
+  checksum: 10/f05183948b00b496400cc13df5798ecab7a85975e7d9a77b314a763b574a990aec0f1bbf1913c648a93b5d8cc82e73bc05f5ec1161d2932aad7ef7f316d9c82d
   languageName: node
   linkType: hard
 
@@ -3113,11 +3113,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"studentzone@workspace:.":
+"studentzone1@workspace:.":
   version: 0.0.0-use.local
-  resolution: "studentzone@workspace:."
+  resolution: "studentzone1@workspace:."
   dependencies:
-    bootstrap: "npm:v5.3.1"
+    bootstrap: "npm:v5.3.3"
     grunt: "npm:^1.6.1"
     grunt-concurrent: "npm:^3.0.0"
     grunt-contrib-uglify: "npm:^5.2.2"

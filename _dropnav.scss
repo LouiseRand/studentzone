@@ -1,0 +1,27 @@
+/* Navbar container */
+.navbar {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    font-family: Arial;
+  }
+  
+  /* Links inside the navbar */
+    #navbar a {
+    float: left;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  
+  /* background color for navbar links on hover */
+  #navbar a:hover {
+    background-color: rgb(224, 144, 218);
+  }
+  
+
+  
+
+
