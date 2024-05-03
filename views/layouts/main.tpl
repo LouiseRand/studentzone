@@ -56,11 +56,17 @@
                               
 
                         </ul>
+                       <!-- <form action="/studentzone/search" method="post" class="d-flex" role="search"> 
+                            <input class="form-control me-2" type="search" placeholder="Dinner..." name="query" aria-label="Search">
+                            <button class="btn btn-outline-dark" type="submit">Search</button>  
+                        </form>  -->
+                        
                         <form action="/studentzone/search" method="post" class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Dinner..." name="query" aria-label="Search">
-                            <button class="btn btn-outline-dark" type="submit">Search</button>
+                            <button class="btn btn-outline-dark" type="submit">Search</button> 
                         </form>
-                        
+
+
                     </div>
                 </div>     
             </nav>

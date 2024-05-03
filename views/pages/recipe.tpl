@@ -16,30 +16,25 @@
         <div class="col-md-6">
         
 
-            {if $recipe.images}
-              
-                <div class="row">
+        {if $recipe.images}
+            <div class="row">
                 {foreach from=$recipe.images item=image}
                     <div class="recipe-image-box">
                         <div class="recipe-image" style="background-image: url('/studentzone/user-images/{$recipe.recipe_image}');">
-                            <a href="/studentzone/user-images{$recipe.recipe_image}"></a>
+                            
                         </div>
                     </div>
                 {/foreach}
-                </div>
-
-            {/if}     
-            
+            </div>
+        {/if}  
+        
+        <div class="recipe-card">
+            <div class="recipe-image" style="background-image: url('/studentzone/user-images/{$recipe.recipe_image}');">
+                
+            </div>
+        </div>
+        </div>                  
           
-            
-
-                                 
-            <div class="recipe-card">
-                <div class="recipe-image" style="background-image: url('/studentzone/user-images/{$recipe.recipe_image}');">
-                    <a href="/studentzone/recipe&id={$recipe.recipe_image}"></a>
-                </div>
-            </div>                  
-        </div>  
               
            
 
@@ -140,27 +135,38 @@
    
 <!-- Display comments -->
 <div class="col-md-12">
-<div class="comments">
-    <h3>Comments</h3>
-    {if $comments}
-        <ul>
-            {foreach $comments as $comment}
-                <li>
-                    <strong>User:</strong> {$comment.user_name1} <!-- Display user name -->
-                    <br>
-                    <strong>Date:</strong> {$comment.created_at} <!-- Display comment date -->
-                    <br>
-                    <strong>Comment:</strong> {$comment.comment_text} <!-- Display comment text -->
-                </li>
-            {/foreach}
-        </ul>
-    {else}
-        <p>No comments yet.</p>
-    {/if}
+    <div class="comments">
+        
+        {if $comments}
+            <ul>
+                <h3>Comments:</h3>
+                {foreach $comments as $comment}
+                    <li class="comment-item">
+                        <div class="comment-box">
+                            <div class="comment-info">
+                                <div class="info-box">
+                                    <div class="comment-text">
+                                        <strong>Comment:</strong> {$comment.comment_text} <!-- Display comment text -->
+                                    </div>
+                                    <div class="user-date">
+                                        <div class="username-date">
+                                            <span class="username">User: {$comment.user_name1}</span> <!-- Display user name -->
+                                            <span class="date">On: {$comment.created_at}</span> <!-- Display comment date -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {/foreach}
+            </ul>
+        {else}
+            <p>No comments yet.</p>
+        {/if}
+    </div>
 </div>
 
 
-    </div>
     </div>
 
 
