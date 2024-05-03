@@ -1,9 +1,18 @@
 <?php
 // Include the file for handling comment submissions
 require_once 'handle_comment_submission.php'; 
+require_once __DIR__ . '/../classes/comment.class.php'; 
 
 // Continue with your existing code
 $recipe_id = $_GET['id'];
+
+
+// Retrieve comments for the recipe from the database
+$Comment = new Comment($Conn);
+$comments = $Comment->getCommentsForRecipeWithUserNames($recipe_id);
+// Pass the comments data to the template
+$Smarty->assign('comments', $comments);
+
 
 // Fetch recipe data
 $Recipe = new Recipe($Conn);
@@ -14,8 +23,6 @@ $Smarty->assign('recipe', $recipe_data);
 $Review = new Review($Conn);
 $recipe_rating = $Review->calculateRating($recipe_id);
 $Smarty->assign('recipe_rating', round($recipe_rating['avg_rating'], 1));
-
-
 
 
 

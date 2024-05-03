@@ -77,13 +77,13 @@ class Recipe {
     }
 
 
-    //public function getFeaturedRecipes(){          //featured recipe slide cards
-    //$query = "SELECT * FROM recipes WHERE recipe_featured = 1";
-    ///$stmt = $this->Conn->prepare($query);
-   // $stmt->execute();
-   // return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    public function getFeaturedRecipes(){          //featured recipe slide cards
+    $query = "SELECT * FROM recipes WHERE recipe_featured = 1";
+    $stmt = $this->Conn->prepare($query);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-   // }
+    }
 
     public function getUserRecipes(){
         $query = "SELECT * FROM recipes WHERE user_id = :user_id";
@@ -97,19 +97,18 @@ class Recipe {
     }
 
 
-
-    //public function randomlySetFeaturedRecipes(){
-     //   $query = "UPDATE recipes SET recipe_featured = 0 WHERE recipe_featured = 1";
-      //  $stmt = $this->Conn->prepare($query);
-      //  $stmt->execute();
+    public function randomlySetFeaturedRecipes(){
+        $query = "UPDATE recipes SET recipe_featured = 0 WHERE recipe_featured = 1";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute();
        
-     //   $query = "UPDATE recipes SET recipe_featured = 1 ORDER BY RAND() LIMIT 6";
-     //   $stmt = $this->Conn->prepare($query);
-      //  $stmt->execute();
+        $query = "UPDATE recipes SET recipe_featured = 1 ORDER BY RAND() LIMIT 6";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute();
         
 
 
-   // }
+    }
 
 }
 

@@ -24,13 +24,24 @@ class Comment {
     }
 
     // Method to retrieve comments for a specific recipe ID
-    public function getCommentsForRecipe($recipe_id) {
-        $query = "SELECT * FROM comments WHERE recipe_id = :recipe_id";
-        $stmt = $this->Conn->prepare($query);
-        $stmt->execute(['recipe_id' => $recipe_id]);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
+    //public function getCommentsForRecipe($recipe_id) {
+      //  $query = "SELECT * FROM comments WHERE recipe_id = :recipe_id";
+      //  $stmt = $this->Conn->prepare($query);
+       // $stmt->execute(['recipe_id' => $recipe_id]);
+      //  return $stmt->fetchAll(PDO::FETCH_ASSOC);
+   // }
 
-
+// Method to retrieve comments for a specific recipe ID along with user names
+public function getCommentsForRecipeWithUserNames($recipe_id) {
+    $query = "
+        SELECT comments.*, users.user_name1
+        FROM comments
+        INNER JOIN users ON comments.user_id = users.user_id
+        WHERE recipe_id = :recipe_id
+    ";
+    $stmt = $this->Conn->prepare($query);
+    $stmt->execute(['recipe_id' => $recipe_id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
 
 }

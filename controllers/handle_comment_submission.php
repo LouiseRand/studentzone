@@ -26,11 +26,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Call the createComment method to insert the comment into the database
             $result = $comment->createComment($comment_data);
+                // Redirect to a different page to prevent duplicate form submissions
+           
 
             // Check if the comment was successfully inserted
             if ($result) {
                 // Comment inserted successfully
                 echo "<p>Thank you for your comment!</p>";
+                // Get the current URL                                   // this is used to redirect the user back to the page to prevent duplicate comments upon page refresh
+                $current_url = $_SERVER['REQUEST_URI'];
+
+                // Append the recipe ID as a parameter to the current URL
+                $redirect_url = $current_url . (strpos($current_url, '?') ? '&' : '?') . 'id=' . $recipe_id;
+
+                                                            
+                // Redirect to the updated URL after a delay
+                echo "<script>setTimeout(function() { window.location.href = '$redirect_url'; }, 1000);</script>";  
+                
+                
             } else {
                 // Failed to insert comment
                 echo "<p>Failed to submit your comment. Please try again later.</p>";

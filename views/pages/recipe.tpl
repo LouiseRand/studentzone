@@ -135,4 +135,35 @@
 
     </div>
     
+    <div class=container>
+
+   
+<!-- Display comments -->
+<div class="col-md-12">
+<div class="comments">
+    <h3>Comments</h3>
+    {if $comments}
+        <ul>
+            {foreach $comments as $comment}
+                <li>
+                    <strong>User:</strong> {$comment.user_name1} <!-- Display user name -->
+                    <br>
+                    <strong>Date:</strong> {$comment.created_at} <!-- Display comment date -->
+                    <br>
+                    <strong>Comment:</strong> {$comment.comment_text} <!-- Display comment text -->
+                </li>
+            {/foreach}
+        </ul>
+    {else}
+        <p>No comments yet.</p>
+    {/if}
+</div>
+
+
+    </div>
+    </div>
+
+
+
+
 {/block}
