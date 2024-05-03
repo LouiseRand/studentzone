@@ -117,7 +117,7 @@
         <!-- HTML form for leaving comments -->
         <h1>Leave a Comment</h1>
         {if $user_data}
-        <form action="" method="post">
+        <form action="" method="post">               
             <input type="hidden" name="recipe_id" value="{$recipe.recipe_id}">
             <div class="form-group">
                 <label for="comment">Your Comment:</label>

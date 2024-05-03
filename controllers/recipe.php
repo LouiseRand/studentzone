@@ -5,13 +5,16 @@ require_once __DIR__ . '/../classes/comment.class.php';
 
 // Continue with your existing code
 $recipe_id = $_GET['id'];
+if($_POST['rating']) {
+    $Review = new Review($Conn);
+    $Review->createReview([
+        "recipe_id" => (int) $recipe_id,
+        "review_rating" => (int) $_POST['rating']
+    ]);
+}
 
 
-// Retrieve comments for the recipe from the database
-$Comment = new Comment($Conn);
-$comments = $Comment->getCommentsForRecipeWithUserNames($recipe_id);
-// Pass the comments data to the template
-$Smarty->assign('comments', $comments);
+
 
 
 // Fetch recipe data
@@ -26,6 +29,18 @@ $Smarty->assign('recipe_rating', round($recipe_rating['avg_rating'], 1));
 
 
 
+
+
+
+
+
+
+
+// Retrieve comments for the recipe from the database
+$Comment = new Comment($Conn);
+$comments = $Comment->getCommentsForRecipeWithUserNames($recipe_id);
+// Pass the comments data to the template
+$Smarty->assign('comments', $comments);
 
 
 
