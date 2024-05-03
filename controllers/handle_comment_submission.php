@@ -35,11 +35,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p>Thank you for your comment!</p>";
                 // Get the current URL                                   // this is used to redirect the user back to the page to prevent duplicate comments upon page refresh
                 $current_url = $_SERVER['REQUEST_URI'];
-
+                // Check if the id parameter already exists in the current URL
+                if (strpos($current_url, 'id=') === false) {
                 // Append the recipe ID as a parameter to the current URL
                 $redirect_url = $current_url . (strpos($current_url, '?') ? '&' : '?') . 'id=' . $recipe_id;
-
-                                                            
+                } else {
+                // If id parameter already exists, use the current URL
+                $redirect_url = $current_url;
+                }                                        
                 // Redirect to the updated URL after a delay
                 echo "<script>setTimeout(function() { window.location.href = '$redirect_url'; }, 1000);</script>";  
                 
