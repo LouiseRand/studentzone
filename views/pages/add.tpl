@@ -26,7 +26,7 @@
         </div>
     {/if}
     
-    <form action="" method="post" enctype="multipart/form-data" class="form-light" >               
+    <form action="" method="post" enctype="multipart/form-data" class="form-light" id="recipe-form">               
             <div class="mb-3">
                 <label class="form-label" for="recipe_name">Recipe Name</label>
                 <input type="text" class="form-control" id="recipe_name" name="recipe_name">
@@ -66,12 +66,18 @@
 
             <div class="mb-3">
                 <label class="form-label" for="recipe_ingredients">Recipe ingredients</label>
-                <input type="text" class="form-control" id="recipe_ingredients" name="recipe_ingredients">
+                <textarea class="form-control" id="recipe_ingredients" name="recipe_ingredients"></textarea>
             </div>
+
             <div class="mb-3">
                 <label class="form-label" for="recipe_instructions">Recipe Instructions</label>
-                <textarea class="form-control" id="recipe_instructions" name="recipe_instructions"></textarea>
+                <textarea class="form-control" id="recipe_instructions" name="recipe_instructions"></textarea>  <!-- input changed to textarea -->
             </div>
+
+            <!-- <div class="mb-3">
+                <label class="form-label" for="recipe_instructions">Recipe Instructions</label>
+                <textarea class="form-control" id="recipe_instructions" name="recipe_instructions"></textarea>
+            </div> -->
             <button type="submit" class="btn btn-primary">Add Recipe</button>        
     </form>
 

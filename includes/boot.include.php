@@ -12,7 +12,8 @@ $Smarty->setTemplateDir(__DIR__.'/../views')
        ->setCacheDir(__DIR__.'/../smarty/cache')
        ->setConfigDir(__DIR__.'/../smarty/configs');
        
-
+// Register the nl2br modifier with Smarty
+$Smarty->registerPlugin('modifier', 'nl2br', 'nl2br');
 require_once(__DIR__.'/autoloader.include.php');
 
 if($_SESSION['is_loggedin']) {
