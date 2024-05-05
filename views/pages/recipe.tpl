@@ -3,7 +3,7 @@
     <div class="container mt-4" >
     <div class="row"> 
     <div class="col-md-12">
-        <h2 class="mb-4 mb-3">{$recipe.recipe_name} </h2><h3>Recipe added by user: {$recipe.user_name1}</h3>
+        <h2 class="mb-4 mb-3">{$recipe.recipe_name} </h2><h6>Recipe added by user: {$recipe.user_name1}</h6>
         
 
         <hr width="100%" color="#FFBF0B" size="5px"/>
@@ -12,7 +12,7 @@
     </div>
     </div>
 
-    <div class=container>     
+    <div class=container>      
     
     
     <div class="row"> 

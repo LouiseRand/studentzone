@@ -15,8 +15,6 @@ if($_POST['rating']) {
 
 
 
-
-
 // Fetch recipe data
 $Recipe = new Recipe($Conn);
 $recipe_data = $Recipe->getRecipe($recipe_id);
@@ -28,20 +26,24 @@ $recipe_rating = $Review->calculateRating($recipe_id);
 $Smarty->assign('recipe_rating', round($recipe_rating['avg_rating'], 1));
 
 
-
-
-
-
-
-
-
-
 // Retrieve comments for the recipe from the database
 $Comment = new Comment($Conn);
 $comments = $Comment->getCommentsForRecipeWithUserNames($recipe_id);
 // Pass the comments data to the template
 $Smarty->assign('comments', $comments);
 
+
+if($_SESSION['user_data']) {
+    $Favourite = new Favourite($Conn);
+    $is_fav = $Favourite->isFavourite($recipe_id);
+    if($is_fav){
+        $Smarty->assign('is_fav', true);
+    }else{
+        $Smarty->assign('is_fav', false);
+    }
+    
+    
+}
 
 
 

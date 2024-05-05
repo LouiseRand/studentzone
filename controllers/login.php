@@ -42,7 +42,7 @@ if($_POST){
 
             $email = new \SendGrid\Mail\Mail(); 
             $email->setFrom("S224306@uos.ac.uk", "Louise Rand");
-            $email->setSubject("Welcome to Orchids for everyone!");
+            $email->setSubject("Welcome to student zone!");
             $email->addTo($_POST['email'], "User");
             $email->addContent(
                  "text/html", "<h1>Welcome to Student Zone!</h1>" //email contents

@@ -12,7 +12,7 @@
     <div class="row">
     <div class="col-md-6">
     <div class="text-box">
-    <h5 class="display-5 fw-bold">Welcome to Student Zone!</h5>
+    <h5 class="display-5">Welcome to Student Zone!</h5>
     
     <div class="col-md-6">
     </div>

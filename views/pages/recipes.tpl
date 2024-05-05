@@ -1,10 +1,10 @@
 {extends file="layouts/main.tpl"}
 {block name="body"}
     <div class="container">   
-    <h1 class="mt-4 mb-3">{$category.cat_name} recipes</h1>
+    <h2 class="mt-4 mb-3">{$category.cat_name} recipes</h2>
 
-                    <p>Browse some {$category.cat_name} recipes below.</p>
-
+                    <h6>Browse some {$category.cat_name} recipes below:</h6>
+                    <hr width="100%" color="#FFBF0B" size="5px"/>
                         <div class="row">
                         {foreach from=$recipes item=recipe}
                             <div class="col-md-3">

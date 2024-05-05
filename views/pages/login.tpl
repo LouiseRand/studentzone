@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12"> 
-                <h2>Login or Register:</h2>
+            <h2 class="mt-4 mb-3">Login or Register:</h2>
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
                         <label class="form-label" for="reg_password_confirm">Confirm Password</label>
                         <input type="password" class="form-control" id="reg_password_confirm" name="password_confirm">
                     </div>
-                    <button type="submit" name="register" value="1" class="btn btn-primary">Register</button>                                    
+                    <button type="submit" name="register" value="1" class="btn btn-studentzone">Register</button>                                    
                 </form> 
                 
 
