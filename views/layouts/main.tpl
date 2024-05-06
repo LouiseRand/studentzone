@@ -35,27 +35,27 @@
                         
                         <ul class="navbar-nav me-auto mt-2 mb-lg-0">   <!-- nav item containers-->
                             <li class="nav-item">
-                                <a class="nav-link" href="/studentzone/home"><h7>Home</h7></a>
+                                <a class="nav-link" href="/studentzone/home"><h4 style="font-size: 1.3rem;">Home</h4></a>
                             </li>  
                             <li class="nav-item">
-                                <a class="nav-link" href="/studentzone/categories"><h7>Categories</h7></a>
+                                <a class="nav-link" href="/studentzone/categories"><h4 style="font-size: 1.3rem;">Categories</h4></a>
                             </li>  
                             
                             <li class="nav-item">
-                                <a class="nav-link" href="http://louisevrand.uosweb.co.uk/forum/"><h7>Forum</h7></a>
+                                <a class="nav-link" href="http://louisevrand.uosweb.co.uk/forum/"><h4 style="font-size: 1.3rem;">Forum</h4></a>
                             </li>
 
                             {if $user_data}
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/studentzone/account"><h7>Account</h7></a>
+                                    <a class="nav-link" href="/studentzone/account"><h4 style="font-size: 1.3rem;">Account</h4></a>
                                 </li>
                             
                                 <li class="nav-item">
-                                    <a class="nav-link" href="/studentzone/logout"><h7>Logout</h7></a>
+                                    <a class="nav-link" href="/studentzone/logout"><h4 style="font-size: 1.3rem;">Logout</h4></a>
                                 </li>
                             {else}
                                 <li class="nav-item">
-                                <a class="nav-link" href="/studentzone/login"><h7>Login / Register</h7></a>
+                                <a class="nav-link" href="/studentzone/login"><h4 style="font-size: 1.3rem;">Login / Register</h4></a>
                                 </li>
                             {/if}   
                               
@@ -79,7 +79,7 @@
         
         
        <!-- Footer -->
-        <footer class="bg-dark text-white text-center p-4 mt-4">
+        <footer class="bg-dark text-white text-center p-4 mt-2">
         &copy; 2024 My Forum
         </footer>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> <!--must be before custom js files-->
