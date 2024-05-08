@@ -1,24 +1,35 @@
 <?php
-if($_POST) {
-    if(!$_POST['currentPassword']){
-        $error = "Current Password not set";
-    }else if(!$_POST['newPassword']){
-        $error = "New Password not set";
+if ($_POST) {
+    // Check if required fields are set
+    if (!isset($_POST['currentPassword']) || !isset($_POST['newPassword'])) {
+        $error = "Both current and new password are required.";
+    } else {
+        // Check if the fields are empty
+        if (empty($_POST['currentPassword']) || empty($_POST['newPassword'])) {
+            $error = "Both current and new password are required.";
+        } else {
+            // Sanitize input data
+            $currentPassword = trim($_POST['currentPassword']);
+            $newPassword = trim($_POST['newPassword']);
+
+            // Call the method to change password
+            $changePass = $User->changeUserPassword($currentPassword, $newPassword);
+
+            if ($changePass === true) {
+                $success = "Password has been updated successfully.";
+            } elseif ($changePass === false) {
+                $error = "Failed to update password. The current password is incorrect.";
+            } else {
+                $error = "An error occurred while updating the password.";
+            }
+        }
     }
 
-    if($error) {
-        $smarty->assign('error', $error);
-    }else{
-        // Validation passed
-        $change_pass = $User->changeUserPassword($_POST['currentPassword'], 
-        $_POST['newPassword']);
-        if($change_pass) {
-            $Smarty->assign('success', "Password has been updated.");
-        }else{
-            $Smarty->assign('error', "Something went wrong.");
-        }
-
+    // Assign error or success message to Smarty template
+    if (isset($error)) {
+        $Smarty->assign('error', $error);
+    } elseif (isset($success)) {
+        $Smarty->assign('success', $success);
     }
 }
-
 

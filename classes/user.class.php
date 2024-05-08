@@ -62,23 +62,21 @@ class User {
         return $user_data['user_degree'];     
     }
 
+    public function isEmailExists($email) {
+        $query = "SELECT COUNT(*) FROM users WHERE user_email = :email";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(':email' => $email));
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
+
+    public function isUsernameExists($username) {
+        $query = "SELECT COUNT(*) FROM users WHERE user_name1 = :username";
+        $stmt = $this->Conn->prepare($query);
+        $stmt->execute(array(':username' => $username));
+        $count = $stmt->fetchColumn();
+        return $count > 0;
+    }
 
 
-
-
-
-
-    //BROKEN BELOW:
-
-    //public function changeUserName1($current_name1, $new_name1) {
-    //    if(!user_name_verify($current_name1, $_SESSION['user_data']['user_name1'])) {
-            // wrong username
-     //       return false;
-    //    }
-     //   $new_sec_pass = ($new_name1);
-    //    $query = "UPDATE users SET user_name1 = :user_name1 WHERE user_id = :user_id";
-    //    $stmt = $this->Conn->prepare($query);
-     //   $stmt->execute(array('user_name1' => $new_sec_name1, 'user_id' => $_SESSION['user_data']['user_id']));
-    //    return true;
-   // }
 }

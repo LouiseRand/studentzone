@@ -44,33 +44,34 @@
 
     
             <div class="col">
-                <form id="registration-form" method="post" action="">
-
-                    <div class="mb-3">                                                
-                          <label class="form-label" for="reg_name1">Username</label>                    
-                          <input type="user_name1" class="form-control" id="reg_name1" name="user_name1"> 
-                     </div>                                                                      
-
-                    <div class="mb-3">
-                        <label class="form-label" for="reg_degree">Degree: Computing, Adult Nursing etc.</label>
-                        <input type="degree" class="form-control" id="reg_degree" name="degree">
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label class="form-label" for="reg_email">UOS Email Address</label>
-                        <input type="email" class="form-control" id="reg_email" name="email">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="reg_password">Password</label>
-                        <input type="password" class="form-control" id="reg_password" name="password">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label" for="reg_password_confirm">Confirm Password</label>
-                        <input type="password" class="form-control" id="reg_password_confirm" name="password_confirm">
-                    </div>
-                    <button type="submit" name="register" value="1" class="btn btn-studentzone">Register</button>                                    
-                </form> 
+            <form id="registration-form" method="post" action="">
+            <div class="mb-3">
+                <label class="form-label" for="reg_name1">Username</label>
+                <input type="text" class="form-control" id="reg_name1" name="user_name1">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label" for="reg_degree">Degree: Computing, Adult Nursing etc.</label>
+                <input type="degree" class="form-control" id="reg_degree" name="degree">
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label" for="reg_email">UOS Email Address</label>
+                <input type="email" class="form-control" id="reg_email" name="email">
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label" for="reg_password">Password</label>
+                <input type="password" class="form-control" id="reg_password" name="password">
+            </div>
+        
+            <div class="mb-3">
+                <label class="form-label" for="reg_password_confirm">Confirm Password</label>
+                <input type="password" class="form-control" id="reg_password_confirm" name="password_confirm">
+            </div>
+            <button type="submit" name="register" value="1" class="btn btn-studentzone">Register</button>
+            </form>
+        
                 
 
             </div>
