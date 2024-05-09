@@ -3,7 +3,13 @@ if ($_POST) {
     if (isset($_POST['register'])) {
         // Registration logic
         $User = new User($Conn);
-        if ($User->isEmailExists($_POST['email'])) {
+
+        
+        $email_parts = explode('@', $_POST['email']);    // Check if email is from uos.ac.uk domain
+        if ($email_parts[1] !== 'uos.ac.uk') {
+            $error = "Email must be from uos.ac.uk domain.";
+
+        }elseif ($User->isEmailExists($_POST['email'])) {
             $error = "Email is already in use. Please choose a different email.";
         } elseif ($User->isUsernameExists($_POST['user_name1'])) {
             $error = "Username is already taken. Please choose a different username.";

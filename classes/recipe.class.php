@@ -5,7 +5,6 @@ class Recipe {
     public function __construct($Conn){
         $this->Conn = $Conn;
     }
-
     public function addRecipe($data) {
         // Get the user ID and username from the session
         $user_id = $_SESSION['user_data']['user_id'];
@@ -19,7 +18,7 @@ class Recipe {
         $stmt = $this->Conn->prepare($query);
     
         // Bind parameters
-        $stmt->bindParam(':cat_id', $data['cat_id']);
+        $stmt->bindParam(':cat_id', $data['cat_id']); // Include category ID
         $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':user_name1', $username);
         $stmt->bindParam(':recipe_name', $data['recipe_name']);
@@ -33,7 +32,7 @@ class Recipe {
         // Execute the statement
         return $stmt->execute();
     }
-
+    
 
     public function getRecipe($recipe_id){                 //Fetching an individual recipe.
         $query = "SELECT * FROM recipes WHERE recipe_id = :recipe_id";
