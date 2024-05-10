@@ -57,7 +57,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['comment'])) {
 
 
 
-
-// Display the recipe template regardless of comment submission status
-//$Smarty->display('recipe.tpl');
-

@@ -22,7 +22,7 @@
                     <div class="recipe-card-image" style="background-image: url(./user-images/categories/{$category.cat_image});">
                                  
                     </div>
-                    <a class="button" href="/studentzone/recipes&id={$category.cat_id}"><h2>{$category.cat_name}</h2></a>                                
+                    <a class="button" href="/studentzone/recipes&id={$category.cat_id}"><h3>{$category.cat_name}</h3></a>                                
                 </div>                         
             </div>
         {/foreach}

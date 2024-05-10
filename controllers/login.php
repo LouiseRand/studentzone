@@ -4,14 +4,12 @@ if ($_POST) {
         // Registration logic
         $User = new User($Conn);
 
-        
         $email_parts = explode('@', $_POST['email']);    // Check if email is from uos.ac.uk domain
         if ($email_parts[1] !== 'uos.ac.uk') {
-            $error = "Email must be from uos.ac.uk domain.";
-
-        }elseif ($User->isEmailExists($_POST['email'])) {
+            $error = "Email must be from uos.ac.uk domain.";  
+        } elseif ($User->isEmailExists($_POST['email'])) {     //prevention of duplicate email addresses for new accounts
             $error = "Email is already in use. Please choose a different email.";
-        } elseif ($User->isUsernameExists($_POST['user_name1'])) {
+        } elseif ($User->isUsernameExists($_POST['user_name1'])) {   //prevent duplicate usernames for new accounts
             $error = "Username is already taken. Please choose a different username.";
         } else {
             // Validate form inputs
@@ -52,10 +50,10 @@ if ($_POST) {
                     );
                     $sendgrid = new \SendGrid('YOUR_SENDGRID_API_KEY');
                     $response = $sendgrid->send($email);
-
+        
                     // Reset error variable after successful registration
                     $error = null;
-
+        
                     // Redirect or display success message
                     $Smarty->assign('success', "Your account has been created. Please now login.");
                 } catch (Exception $e) {
@@ -72,25 +70,41 @@ if ($_POST) {
         // Validate form inputs
         if (!$_POST['email'] || !$_POST['password']) {
             $error = "Both email and password are required.";
-        } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
             $error = "Email is not valid.";
         } else {
-            // Attempt to authenticate user
-            $User = new User($Conn);
-            $user_data = $User->loginUser($_POST['email'], $_POST['password']);
+            // Prepare SQL statement with parameters
+            $stmt = $Conn->prepare("SELECT * FROM users WHERE user_email = :email");
+    
+            // Bind parameters
+            $stmt->bindParam(':email', $_POST['email']);
+    
+            // Execute statement
+            $stmt->execute();
+    
+            // Fetch user data
+            $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            // Verify password
             if ($user_data) {
-                // User authenticated successfully, proceed with login
-                $_SESSION['is_loggedin'] = true;
-                $_SESSION['user_data'] = $user_data;
-                header("Location: /studentzone/account");
-                exit();
+                if (password_verify($_POST['password'], $user_data['user_pass'])) {
+                    // User authenticated successfully, proceed with login
+                    $_SESSION['is_loggedin'] = true;
+                    $_SESSION['user_data'] = $user_data;
+                    header("Location: /studentzone/account");
+                    exit();
+                } else {
+                    // Incorrect password
+                    $error = "Incorrect password.";
+                }
             } else {
-                // Authentication failed, display error message
-                $error = "Incorrect email/password combination.";
+                // User not found
+                $error = "User not found.";
             }
         }
-
+    
         // Assign error message to Smarty template
         $Smarty->assign('error', $error);
     }
+    
 }
